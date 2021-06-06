@@ -1,31 +1,32 @@
 package school.management.system;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * This class is responsible for keeping track of the students
  */
 
 public class Student {
 
-    //TODO: increment ID in constructor to increase the ID each time a new Student object is created
-
+    private static final AtomicInteger count = new AtomicInteger(0);
     private int id;
     private String name;
     private int grade;
     private int feesPaid;
     private int feesTotal;
 
+
     /**
      * To create a new student by initializing the following:
      * Fees paid for every student is $30,000.
      * Fees paid is initially 0.
-     * @param id id for the student: this is unique.
      * @param name name for the student.
      * @param grade grade for the student
      */
-    public Student (int id, String name, int grade) {
+    public Student ( String name, int grade) {
         this.feesPaid = 0;
         this.feesTotal = 30000;
-        this.id = id;
+        this.id = count.incrementAndGet();
         this.name = name;
         this.grade = grade;
     }

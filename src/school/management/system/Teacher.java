@@ -1,5 +1,7 @@
 package school.management.system;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Teacher {
 
     /**
@@ -8,7 +10,7 @@ public class Teacher {
      */
 
     //TODO: increment ID in constructor to increase the ID each time a new Teacher object is created
-
+    private static final AtomicInteger count = new AtomicInteger(0);
     private int id;
     private String name;
     private int salary;
@@ -16,12 +18,11 @@ public class Teacher {
 
     /**
      * Creates a new teacher object.
-     * @param id id for the teacher.
      * @param name name for the teacher.
      * @param salary salary for the teacher.
      */
-    public Teacher (int id, String name, int salary){
-        this.id = id;
+    public Teacher ( String name, int salary){
+        this.id = count.incrementAndGet();
         this.name= name;
         this.salary=salary;
         this.salaryEarned = 0;

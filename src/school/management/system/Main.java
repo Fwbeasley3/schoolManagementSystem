@@ -9,18 +9,18 @@ public class Main {
 
         //TODO: Create a text user interface to add students , teachers, and payment functions
 
-        Teacher sarah = new Teacher(1,"Sarah", 500);
-        Teacher melissa = new Teacher(2,"Melissa", 700);
-        Teacher tom = new Teacher(3,"Tom",600);
+        Teacher sarah = new Teacher("Sarah", 500);
+        Teacher melissa = new Teacher("Melissa", 700);
+        Teacher tom = new Teacher("Tom",600);
 
         List<Teacher> listOfTeachers = new ArrayList<>();
         listOfTeachers.add(sarah);
         listOfTeachers.add(melissa);
         listOfTeachers.add(tom);
 
-        Student vino = new Student(1,"Vino", 4);
-        Student kaden = new Student(2,"Kaden", 5);
-        Student winnie = new Student(3,"Winifred",2);
+        Student vino = new Student("Vino", 4);
+        Student kaden = new Student("Kaden", 5);
+        Student winnie = new Student("Winifred",2);
 
         List<Student> listOfStudents = new ArrayList<>();
         listOfStudents.add(vino);
@@ -30,11 +30,11 @@ public class Main {
         School stm = new School(listOfTeachers,listOfStudents);
 
         //Adding a new teacher
-        Teacher scout = new Teacher(4,"Scout",1000);
+        Teacher scout = new Teacher("Scout",1000);
         stm.addTeacher(scout);
 
         //Adding a new student
-        Student fred = new Student(4,"Freddie", 12);
+        Student fred = new Student("Freddie", 12);
         stm.addStudent(fred);
 
         vino.payFees(5000);
